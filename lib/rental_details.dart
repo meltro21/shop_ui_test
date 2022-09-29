@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -90,24 +92,266 @@ class _RentalDetailsState extends State<RentalDetails> {
                     ),
                   ),
 //white bg content
-                  child: Column(children: [
-                    //Item Rent
-                    Container(
-                      margin: EdgeInsets.only(top: 20),
-                      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 2),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(2),
-                        color: Color(0xffF19B6B),
-                      ),
-                      child: Text(
-                        'ITEMS RENT',
-                        style: GoogleFonts.poppins(
-                            fontWeight: FontWeight.w400,
-                            color: Color(0xffFFFFFF),
-                            fontSize: 8),
-                      ),
+                  child: Container(
+                    margin: EdgeInsets.only(top: 20),
+                    child: SingleChildScrollView(
+                      child: Column(children: [
+                        //Item Rent
+                        Container(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(2),
+                            color: Color(0xffF19B6B),
+                          ),
+                          child: Text(
+                            'ITEMS RENT',
+                            style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xffFFFFFF),
+                                fontSize: 8),
+                          ),
+                        ),
+                        //Black dress with belt
+                        Text(
+                          'Black dress with a belt',
+                          style: GoogleFonts.poppins(
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xff5E2F21),
+                              fontSize: 20),
+                        ),
+                        //Clothes > Dresses
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Clothes',
+                              style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w400,
+                                  color: Color(0xff0F0F0F),
+                                  fontSize: 14),
+                            ),
+                            Icon(Icons.arrow_right),
+                            Text(
+                              'Clothes',
+                              style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w400,
+                                  color: Color(0xff0F0F0F),
+                                  fontSize: 14),
+                            ),
+                          ],
+                        ),
+                        //50,000 per day
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              '\$ 50,00 ',
+                              style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  color: Color(0xff0F0F0F),
+                                  fontSize: 16),
+                            ),
+                            Text(
+                              'per day ',
+                              style: GoogleFonts.poppins(
+                                  fontFeatures: [
+                                    FontFeature.superscripts(),
+                                  ],
+                                  fontWeight: FontWeight.w600,
+                                  color: Color(0xff0F0F0F),
+                                  fontSize: 16),
+                            ),
+                          ],
+                        ),
+                        //Refundable Deposit
+                        Text(
+                          'Refundable Deposit \$300',
+                          style: GoogleFonts.poppins(
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xff0F0F0F),
+                              fontSize: 12),
+                        ),
+                        //Rating
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.star,
+                              color: Color(0xffFDC967),
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: Color(0xffFDC967),
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: Color(0xffFDC967),
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: Color(0xffFDC967),
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: Color(0xffFDC967),
+                            )
+                          ],
+                        ),
+                        //Rating
+                        Text(
+                          '4.9 (from 50 ratings)',
+                          style: GoogleFonts.poppins(
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xff525470),
+                              fontSize: 12),
+                        ),
+                        //Category Tabs
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Container(
+                            margin: EdgeInsets.only(left: 10, right: 100),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'About',
+                                        style: GoogleFonts.poppins(
+                                            fontWeight: FontWeight.w600,
+                                            color: Color(0xff0F0F0F),
+                                            fontSize: 18),
+                                      ),
+                                      Container(
+                                        height: 2,
+                                        width: 20,
+                                        color: Colors.black,
+                                      )
+                                    ]),
+                                Text(
+                                  'Pictures',
+                                  style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0xff6F6F6F),
+                                      fontSize: 18),
+                                ),
+                                Text(
+                                  'Availability',
+                                  style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0xff6F6F6F),
+                                      fontSize: 18),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        //Here you can buy...
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Container(
+                          margin: EdgeInsets.symmetric(horizontal: 10),
+                          child: Text(
+                            'Here you can buy and sell clothes or other small things, giving them a chance for a second life.',
+                            maxLines: 2,
+                            style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xff6F6F6F),
+                                fontSize: 14),
+                          ),
+                        ),
+
+                        //Location
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Container(
+                            margin: EdgeInsets.only(left: 10),
+                            child: RichText(
+                                text: TextSpan(children: [
+                              TextSpan(
+                                text: 'Location: ',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xff6F6F6F),
+                                    fontSize: 16),
+                              ),
+                              TextSpan(
+                                text: 'New York, 10006',
+                                style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xff0F0F0F),
+                                    fontSize: 16),
+                              ),
+                            ])),
+                          ),
+                        ),
+                        //Map
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Image.asset('assets/images/map.png'),
+                        ),
+                        //Buy Button
+                        Container(
+                          margin: EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 10),
+                          width: mediaWidth,
+                          height: mediaHeight * 0.05,
+                          child: Center(
+                              child: Text(
+                            'Buy',
+                            style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w400,
+                                color: Colors.white,
+                                fontSize: 16),
+                          )),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            color: Color(0xff5E2F21),
+                          ),
+                        ),
+                        //Security Transaction
+                        Container(
+                          height: mediaHeight * 0.06,
+                          margin:
+                              EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                          child: Row(
+                            children: [
+                              Image.asset('assets/images/lock.png'),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Secure Transaction',
+                                    style: GoogleFonts.poppins(
+                                        fontWeight: FontWeight.w700,
+                                        color: Color(0xff5E2F21),
+                                        fontSize: 14),
+                                  ),
+                                  Text(
+                                    'How we protect your security',
+                                    style: GoogleFonts.poppins(
+                                        fontWeight: FontWeight.w700,
+                                        color: Color(0xff5E2F21),
+                                        fontSize: 14),
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
+                        )
+                      ]),
                     ),
-                  ]),
+                  ),
                 ),
               ),
 //profile row on image
