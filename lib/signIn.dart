@@ -20,84 +20,213 @@ class _SignInState extends State<SignIn> {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          height: mediaHeight * 0.55,
+          height: mediaHeight * 0.45,
           width: mediaWidth,
           color: Colors.blue,
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            //Cross Icon
-            Align(
-              alignment: Alignment.topRight,
-              child: Container(
-                margin: EdgeInsets.only(right: 20, top: 15),
-                child: Icon(
-                  Icons.close,
-                  color: Color(0xff0F0F0F),
-                ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(left: 10, top: mediaHeight * 0.5 * 0.1),
-              child: Text(
-                'Enter your e-mail and password to login.',
-                style: GoogleFonts.poppins(
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xffFFFFFF),
-                    fontSize: 14),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-              child: TextField(
-                decoration: InputDecoration(
-                    label: Text(
-                      'E-mail',
-                      style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w400,
-                          color: Color(0xff8F9BB3),
-                          fontSize: 14),
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                //close ^
+                Container(
+                  margin: EdgeInsets.only(right: 20, top: 20),
+                  child: Align(
+                    alignment: Alignment.topRight,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          'close',
+                          style: GoogleFonts.poppins(
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xff697386),
+                              fontSize: 14),
+                        ),
+                        Transform.rotate(
+                            angle: -1.5708,
+                            child: Icon(
+                              Icons.arrow_right,
+                              color: Color(0xff697386),
+                            )),
+                      ],
                     ),
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xffEDF1F7)))),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-              child: TextField(
-                decoration: InputDecoration(
-                    suffixIcon: Icon(Icons.visibility_off),
-                    label: Text(
-                      'Password',
-                      style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w400,
-                          color: Color(0xff8F9BB3),
-                          fontSize: 14),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xffEDF1F7)))),
-              ),
-            ),
-            InkWell(
-              onTap: () {},
-              child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                width: mediaWidth,
-                height: mediaHeight * 0.05,
-                child: Center(
-                    child: Text(
-                  'Next',
-                  style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w400,
-                      color: Colors.white,
-                      fontSize: 16),
-                )),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: Color(0xff5E2F21),
+                  ),
                 ),
-              ),
-            ),
-          ]),
+                //Image row
+                SizedBox(
+                  height: mediaHeight * 0.05,
+                ),
+                Container(
+                  height: mediaHeight * 0.5 * 0.66,
+                  width: mediaWidth,
+                  margin: EdgeInsets.only(left: 10, right: 10),
+                  color: Colors.red,
+                  child: Row(
+                    children: [
+                      //image
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Image.asset(
+                          'assets/images/feature1.png',
+                          height: 50,
+                          width: 50,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Black dress with a belt',
+                                    style: GoogleFonts.poppins(
+                                        fontWeight: FontWeight.w500,
+                                        color: Color(0xff1A1F36),
+                                        fontSize: 14),
+                                  ),
+                                  Text(
+                                    '\$50,00',
+                                    style: GoogleFonts.poppins(
+                                        fontWeight: FontWeight.w500,
+                                        color: Color(0xff1A1F36),
+                                        fontSize: 14),
+                                  ),
+                                ]),
+                            Row(
+                              children: [
+                                Text(
+                                  'Qty',
+                                  style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.w500,
+                                      color: Color(0xff697386),
+                                      fontSize: 14),
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text(
+                                  '1',
+                                  style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.w500,
+                                      color: Color(0xff1A1F36),
+                                      fontSize: 14),
+                                ),
+                                Transform.rotate(
+                                  angle: 1.5708,
+                                  child: Icon(
+                                    Icons.arrow_right,
+                                    color: Color(0xff8792A2),
+                                  ),
+                                )
+                              ],
+                            ),
+                            //Subtotal row
+                            SizedBox(
+                              height: 30,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Subtotal',
+                                  style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.w500,
+                                      color: Color(0xff1A1F36),
+                                      fontSize: 14),
+                                ),
+                                Text(
+                                  '\$50,00',
+                                  style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.w500,
+                                      color: Color(0xff1A1F36),
+                                      fontSize: 14),
+                                ),
+                              ],
+                            ),
+                            //Divider
+                            Divider(
+                              thickness: 2,
+                              color: Color.fromRGBO(60, 66, 87, .12),
+                            ),
+                            //Fee
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Fee',
+                                  style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.w500,
+                                      color: Color(0xff697386),
+                                      fontSize: 14),
+                                ),
+                                Text(
+                                  '\$5,00',
+                                  style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.w500,
+                                      color: Color(0xff697386),
+                                      fontSize: 14),
+                                ),
+                              ],
+                            ),
+                            //Divider
+                            Divider(
+                              thickness: 2,
+                              color: Color.fromRGBO(60, 66, 87, .12),
+                            ),
+                            //Total
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Total due',
+                                  style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.w500,
+                                      color: Color(0xff1A1F36),
+                                      fontSize: 14),
+                                ),
+                                Text(
+                                  '\$55,00',
+                                  style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.w500,
+                                      color: Color(0xff1A1F36),
+                                      fontSize: 14),
+                                ),
+                              ],
+                            ),
+                            //Confirm
+                            Align(
+                              alignment: Alignment.topRight,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Color(0xff5E2F21),
+                                    borderRadius: BorderRadius.circular(5)),
+                                margin: EdgeInsets.only(top: 20, left: 20),
+                                width: mediaWidth * 0.4,
+                                height: mediaWidth * 0.1,
+                                child: Center(
+                                    child: Text(
+                                  'Confirm',
+                                  style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.w500,
+                                      color: Color(0xffFFFFFF),
+                                      fontSize: 14),
+                                )),
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ]),
         ),
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shop_ui_test/payment.dart';
 import 'package:shop_ui_test/rental_details.dart';
 import 'package:shop_ui_test/signIn.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const RentalDetails(),
+      home: const Payment(),
     );
   }
 }
